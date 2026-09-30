@@ -9,7 +9,7 @@ import RequireStep from "./layout/RequireStep.jsx";
 export default function App() {
   return (
     <WizardProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route element={<AppShell />}>
             <Route path="/" element={<Navigate to="/patient-input" replace />} />
