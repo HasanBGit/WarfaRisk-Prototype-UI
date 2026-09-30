@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* Flat clinical accent — deliberately teal, not PRSgene's indigo/orange gradients */
+  --color-brand-50: #f0fbfa;
+  --color-brand-100: #d9f4f1;
+  --color-brand-200: #b7e9e3;
+  --color-brand-600: #0f766e;
+  --color-brand-700: #0b5b55;
+  --color-brand-900: #073b37;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
