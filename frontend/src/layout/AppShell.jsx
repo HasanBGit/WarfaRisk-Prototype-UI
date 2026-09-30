@@ -42,9 +42,9 @@ export default function AppShell() {
       </main>
 
       <footer className="mx-auto max-w-5xl px-6 pb-8 pt-4 text-center text-xs text-gray-400">
-        Research prototype only. Not evaluated prospectively or by clinical
-        staff; not a validated clinical tool. Do not use for actual dosing
-        decisions.
+        Research prototype only. It has not been evaluated prospectively or by
+        clinical staff and is not a validated clinical tool. Do not use it for
+        actual dosing decisions.
       </footer>
     </div>
   );

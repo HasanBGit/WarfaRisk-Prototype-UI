@@ -60,7 +60,7 @@ export default function PatientInputScreen() {
       <section>
         <SectionHeader>Genetic Inputs</SectionHeader>
         <p className="mb-3 text-xs italic text-gray-400">
-          optional — falls back to clinical-only model if absent
+          Optional. If left blank, the clinical-only model is used.
         </p>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <SelectField
@@ -82,8 +82,8 @@ export default function PatientInputScreen() {
 
       <div className="flex flex-col items-center gap-4 border-t border-gray-100 pt-4 sm:flex-row sm:justify-between">
         <div className="rounded-md border border-dashed border-gray-300 bg-gray-50 px-3 py-2 text-xs text-gray-500">
-          ⚠ All transformers fit on training fold only. No test-set information
-          used in preprocessing.
+          All transformers are fit on the training fold only, so no test-set
+          information is used in preprocessing.
         </div>
         <button
           type="button"

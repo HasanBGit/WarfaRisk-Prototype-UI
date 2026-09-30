@@ -25,8 +25,8 @@ export default function DoseResultScreen() {
       {!hasGenotype && (
         <Card accent="gray">
           <p className="text-xs text-gray-600">
-            ⓘ Pharmacogenomic information not incorporated. Clinical-only
-            model in use (no CYP2C9 / VKORC1 genotype entered).
+            No CYP2C9 or VKORC1 genotype was entered, so the prediction uses
+            the clinical-only model without pharmacogenomic information.
           </p>
         </Card>
       )}
@@ -44,7 +44,7 @@ export default function DoseResultScreen() {
           <Card>
             <label className="flex items-center gap-2 text-xs text-gray-600">
               <input type="checkbox" checked readOnly className="h-3.5 w-3.5 rounded border-gray-300 text-gray-900" />
-              FHIR R4 ready — MedicationRequest populated with dose + interval
+              FHIR R4 ready: the MedicationRequest includes the dose and interval
             </label>
           </Card>
           <div className="flex gap-2">

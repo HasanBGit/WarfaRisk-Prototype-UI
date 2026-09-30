@@ -112,7 +112,7 @@ export const SHAP_ATTRIBUTIONS = [
 export const PHARMACOGENOMIC_SUMMARY = {
   geneticPct: 64,
   clinicalPct: 36,
-  note: "VKORC1 (AG allele) raises dose sensitivity. Consistent with IWPC-1780 population mean.",
+  note: "VKORC1 (AG allele) raises dose sensitivity, consistent with the IWPC-1780 population mean.",
 };
 
 export const EVIDENCE_LINKS = [
@@ -124,7 +124,7 @@ export const EVIDENCE_LINKS = [
 export const RAG_EXPLANATION = {
   model: "MedGemma-27b-it",
   backend: "Hugging Face Inference Providers",
-  text: "MedGemma-27b-it generates a natural-language rationale grounded in SHAP values + PharmGKB/CPIC guidelines (verified against evidence tier).",
+  text: "MedGemma-27b-it generates a natural-language rationale grounded in SHAP values and PharmGKB/CPIC guidelines, verified against evidence tier.",
 };
 
 export const PORTABILITY_NOTE = {
