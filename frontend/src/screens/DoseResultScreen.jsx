@@ -9,7 +9,6 @@ import {
   CalibrationNoticeCard,
   PortabilityFlagCard,
 } from "../components/DoseResultCards.jsx";
-import Card from "../components/Card.jsx";
 import WizardFooterNav from "../components/WizardFooterNav.jsx";
 
 export default function DoseResultScreen() {
@@ -23,12 +22,10 @@ export default function DoseResultScreen() {
       <PatientSummaryStrip patientInput={patientInput} hasGenotype={hasGenotype} />
 
       {!hasGenotype && (
-        <Card accent="gray">
-          <p className="text-xs text-gray-600">
-            No CYP2C9 or VKORC1 genotype was entered, so the prediction uses
-            the clinical-only model without pharmacogenomic information.
-          </p>
-        </Card>
+        <div className="rounded-md border border-gray-300 border-l-4 border-l-gray-500 bg-gray-50 px-4 py-2.5 text-xs text-gray-700">
+          ⓘ <span className="font-semibold">Pharmacogenomic information not incorporated.</span>{" "}
+          Clinical-only model in use (no CYP2C9 / VKORC1 genotype entered).
+        </div>
       )}
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -41,12 +38,9 @@ export default function DoseResultScreen() {
         <div className="space-y-4">
           <CalibrationNoticeCard calibration={doseResult.calibration} />
           <PortabilityFlagCard portability={doseResult.portability} />
-          <Card>
-            <label className="flex items-center gap-2 text-xs text-gray-600">
-              <input type="checkbox" checked readOnly className="h-3.5 w-3.5 rounded border-gray-300 text-gray-900" />
-              FHIR R4 ready: the MedicationRequest includes the dose and interval
-            </label>
-          </Card>
+          <div className="rounded-md border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-xs font-medium text-emerald-800">
+            ✓ FHIR R4 ready, MedicationRequest populated with dose and interval
+          </div>
           <div className="flex gap-2">
             <button
               type="button"

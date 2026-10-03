@@ -56,9 +56,10 @@ export function PortabilityNoteCard({ note }) {
   return (
     <Card accent="red" title="Portability note">
       <p className="text-xs text-gray-600">
-        When this subgroup was excluded from training (Phase 4), MAE rose by
-        {" "}{note.stackingPenalty.toFixed(2)} mg/week. Calibration for the subgroup is
-        nominal ({note.calibrationCoverage.toFixed(1)}% coverage).
+        ⚑ This subgroup showed a +{note.stackingPenalty.toFixed(2)} mg/week
+        penalty when excluded from training (Phase 4). Calibration itself is
+        nominal ({note.calibrationCoverage.toFixed(1)}% coverage) for this
+        subgroup.
       </p>
     </Card>
   );

@@ -54,10 +54,15 @@ export function CheckboxField({ label, checked, onChange }) {
   );
 }
 
-export function SectionHeader({ children }) {
+export function SectionHeader({ children, note }) {
   return (
     <h2 className="mb-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
       {children}
+      {note && (
+        <span className="ml-2 text-[11px] font-normal normal-case tracking-normal text-blue-600">
+          {note}
+        </span>
+      )}
     </h2>
   );
 }
