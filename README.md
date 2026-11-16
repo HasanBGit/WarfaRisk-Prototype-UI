@@ -61,15 +61,32 @@ VITE_API_BASE_URL=http://localhost:8000
 ```bibtex
 @article{barmandah2026warfarisk,
   author  = {Barmandah, Hassan and Marghalani, Siraj Aldeen and Bawazir, Omar Abdullah
-             and Shaat, Moath and Alkattan, Abdullah N. and AlEissa, Mariam M.},
+             and Shaat, Muath and Alkattan, Abdullah N. and AlEissa, Mariam M.},
   title   = {{WarfaRisk}: A Reproducible, Fairness-Aware Machine Learning Pipeline for
              Warfarin Dose Prediction (Prototype)},
   journal = {AI},
   publisher = {MDPI},
   year    = {2026},
-  note    = {Manuscript ai-4528916, under review},
+  note    = {Manuscript ai-4528916, accepted 9 October 2026},
 }
 ```
+
+The pipeline and trained models behind this interface are described in:
+
+```bibtex
+@article{jpm16100531,
+  author  = {Barmandah, Hassan and Bawazir, Omar A. and Marghalani, Siraj Aldeen and Shaat, Muath and Alkattan, Abdullah N. and AlEissa, Mariam M.},
+  title   = {Beyond Mean Absolute Error: Ancestry-Stratified Calibration and Explainability for Warfarin Dosing Models},
+  journal = {Journal of Personalized Medicine},
+  volume  = {16},
+  number  = {10},
+  pages   = {531},
+  year    = {2026},
+  doi     = {10.3390/jpm16100531},
+}
+```
+
+A machine-readable version is in [`CITATION.cff`](CITATION.cff). Pipeline code: <https://github.com/HasanBGit/WarfaRisk>.
 
 ## License
 
