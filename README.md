@@ -66,8 +66,11 @@ VITE_API_BASE_URL=http://localhost:8000
              Warfarin Dose Prediction (Prototype)},
   journal = {AI},
   publisher = {MDPI},
+  volume  = {7},
+  number  = {10},
+  pages   = {431},
   year    = {2026},
-  note    = {Manuscript ai-4528916, accepted 9 October 2026},
+  doi     = {10.3390/ai7100431},
 }
 ```
 
