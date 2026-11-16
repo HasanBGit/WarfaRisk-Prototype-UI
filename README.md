@@ -8,7 +8,7 @@ A three-step web interface for warfarin dose decision support. It shows fixed ex
 
 Live demo: <https://hasanbgit.github.io/WarfaRisk-Prototype-UI/>
 
-The pipeline and trained models this interface is based on are in [HasanBGit/WarfaRisk](https://github.com/HasanBGit/WarfaRisk).
+The pipeline and trained models this interface is based on are in [HasanBGit/WarfaRisk](https://github.com/HasanBGit/WarfaRisk). The interface connected to the trained model (a vanilla JavaScript app with a Flask server) is `prototype_app/` in that repository. This repository is the React and Django demo with fixed example data.
 
 ## Contents
 
