@@ -16,10 +16,10 @@ class HealthCheckView(APIView):
 
 
 class PredictDoseView(APIView):
-    """Returns the combined or clinical-only mock dose result depending on
-    whether genotype fields were submitted. This is the real branching
-    logic the interface uses; the numbers themselves are fixed example
-    values, not a live model prediction."""
+    """
+    Returns the combined or clinical-only mock dose result depending on whether
+    genotype fields were submitted
+    """
 
     def post(self, request):
         input_serializer = PatientInputSerializer(data=request.data)
@@ -43,8 +43,7 @@ class ExplainView(APIView):
 
 
 class FhirMedicationRequestView(APIView):
-    """Stub: demonstrates the FHIR R4 export round trip described in the
-    manuscript. Returns a minimal, not-fully-populated resource."""
+    """Stub: demonstrates the FHIR R4 export round trip described in the manuscript"""
 
     def post(self, request):
         stub = {

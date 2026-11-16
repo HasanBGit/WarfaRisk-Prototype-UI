@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useWizard } from "../context/WizardContext.jsx";
+import { useWizard } from "../context/useWizard.js";
 import { PatientSummaryStrip } from "../components/PatientSummaryStrip.jsx";
 import {
   DoseCard,

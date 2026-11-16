@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useWizard } from "../context/WizardContext.jsx";
+import { useWizard } from "../context/useWizard.js";
 import { PatientSummaryStrip } from "../components/PatientSummaryStrip.jsx";
 import Card from "../components/Card.jsx";
 import ShapTornadoChart from "../components/ShapTornadoChart.jsx";
@@ -16,12 +16,13 @@ export default function ExplainabilityScreen() {
   const navigate = useNavigate();
   const { patientInput, doseResult, hasGenotype, explanation, loadExplanation, resetWizard } = useWizard();
 
+  const requested = useRef(false);
+
   useEffect(() => {
-    if (!explanation) {
-      loadExplanation();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (requested.current || explanation) return;
+    requested.current = true;
+    loadExplanation();
+  }, [explanation, loadExplanation]);
 
   if (!doseResult || !explanation) return null;
 

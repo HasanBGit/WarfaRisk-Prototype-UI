@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { WizardProvider } from "./context/WizardContext.jsx";
+import { WizardProvider } from "./context/WizardProvider.jsx";
 import AppShell from "./layout/AppShell.jsx";
 import PatientInputScreen from "./screens/PatientInputScreen.jsx";
 import DoseResultScreen from "./screens/DoseResultScreen.jsx";

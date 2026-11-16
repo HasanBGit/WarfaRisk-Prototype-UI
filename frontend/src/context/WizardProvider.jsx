@@ -1,8 +1,7 @@
-import { createContext, useContext, useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { PATIENT_INPUT_DEFAULTS } from "../mocks/mockData.js";
 import { predictDose, fetchExplanation } from "../api/client.js";
-
-const WizardContext = createContext(null);
+import { WizardContext } from "./wizardContext.js";
 
 const EMPTY_INPUT = {
   ...PATIENT_INPUT_DEFAULTS,
@@ -56,10 +55,4 @@ export function WizardProvider({ children }) {
   return (
     <WizardContext.Provider value={value}>{children}</WizardContext.Provider>
   );
-}
-
-export function useWizard() {
-  const ctx = useContext(WizardContext);
-  if (!ctx) throw new Error("useWizard must be used within a WizardProvider");
-  return ctx;
 }

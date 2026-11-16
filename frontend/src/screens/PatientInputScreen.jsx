@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useWizard } from "../context/WizardContext.jsx";
+import { useWizard } from "../context/useWizard.js";
 import { NumberField, SelectField, CheckboxField, SectionHeader } from "../components/FormField.jsx";
 import {
   PATIENT_INPUT_DEFAULTS,

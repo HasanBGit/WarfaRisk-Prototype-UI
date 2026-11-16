@@ -2,8 +2,7 @@ from rest_framework import serializers
 
 
 class PatientInputSerializer(serializers.Serializer):
-    """Validates the Screen 1 form payload. Bounds match the manuscript's
-    stated preprocessing ranges, not clinical practice guidelines."""
+    """Validates the Screen 1 form payload"""
 
     age = serializers.IntegerField(min_value=18, max_value=100)
     weight = serializers.FloatField(min_value=30, max_value=200)
@@ -88,8 +87,7 @@ class ExplainabilityResponseSerializer(serializers.Serializer):
 
 
 class FhirMedicationRequestSerializer(serializers.Serializer):
-    """Stub demonstrating the FHIR R4 MedicationRequest round trip the
-    manuscript describes. Not a full FHIR resource implementation."""
+    """Stub demonstrating the FHIR R4 MedicationRequest round trip the manuscript describes"""
 
     resourceType = serializers.CharField(default="MedicationRequest")
     status = serializers.CharField(default="draft")

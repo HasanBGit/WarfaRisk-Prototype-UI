@@ -1,6 +1,3 @@
-// If VITE_API_BASE_URL is set, this talks to the real Django backend.
-// Otherwise (the default, and what the deployed GitHub Pages build uses),
-// it resolves from the static mock data directly, with no network calls.
 
 import {
   getDoseResult,

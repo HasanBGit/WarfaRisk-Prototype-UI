@@ -1,7 +1,3 @@
-// Static example data reproducing the numbers already published in the
-// WarfaRisk manuscript's own UI figures (Figures fig:ui1-fig:ui3). This is a
-// prototype: no live model runs here, so these values are fixed rather than
-// computed, and match the manuscript verbatim rather than being invented.
 
 export const PATIENT_INPUT_DEFAULTS = {
   age: 68,

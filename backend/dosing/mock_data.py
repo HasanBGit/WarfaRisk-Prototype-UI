@@ -1,8 +1,6 @@
 """
-Static example data reproducing the numbers already published in the
-WarfaRisk manuscript's own UI figures. This backend does not run a live
-model: values are fixed to match the manuscript rather than computed, and
-must be kept in sync with frontend/src/mocks/mockData.js.
+Static example data reproducing the numbers already published in the WarfaRisk
+manuscript's own UI figures
 """
 
 COMBINED_RESULT = {

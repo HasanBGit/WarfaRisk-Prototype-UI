@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class DosingConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'dosing'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "dosing"

@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import WizardStepper from "./WizardStepper.jsx";
-import { useWizard } from "../context/WizardContext.jsx";
+import { useWizard } from "../context/useWizard.js";
 
 const STEP_ROUTES = ["/patient-input", "/dose-result", "/explainability"];
 
