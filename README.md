@@ -1,39 +1,68 @@
-# WarfaRisk: Warfarin Dose Decision Support (Prototype Interface)
+# WarfaRisk Prototype Interface
+
+A three-step web interface for warfarin dose decision support. It shows fixed example data and is not connected to a live model.
 
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![status](https://img.shields.io/badge/status-v0.9--prototype-lightgrey)
 
-> **Research prototype only.** Not clinically validated. Do not use for actual dosing decisions.
+> This is a research prototype. It is not clinically validated and must not be used to make a dosing decision.
 
-A demo interface for warfarin dose prediction. It shows fixed example data and is not connected to a live model.
+Live demo: <https://hasanbgit.github.io/WarfaRisk-Prototype-UI/>
 
-## Features
+The pipeline and trained models this interface is based on are in [HasanBGit/WarfaRisk](https://github.com/HasanBGit/WarfaRisk).
 
-- 3-step wizard: Patient Input → Dose Result (90% conformal interval) → SHAP Explainability
-- Clinical-only fallback when genotype fields are blank
-- Per-ancestry-subgroup calibration notice and portability flag
-- FHIR R4 export stub (`MedicationRequest`)
-- RAG explanation card (MedGemma-27b-it, grounded in SHAP + PharmGKB/CPIC)
+## Contents
 
-## Tech stack
+- [What it does](#what-it-does)
+- [Project layout](#project-layout)
+- [Getting started](#getting-started)
+- [API](#api)
+- [Citation](#citation)
+- [License](#license)
 
-- **Frontend:** React + Vite + Tailwind CSS + React Router
-- **Backend:** Django + Django REST Framework (optional)
+## What it does
+
+The interface walks a user through three screens:
+
+1. Patient input: clinical parameters, comedications and optional CYP2C9 and VKORC1 genotypes.
+2. Dose result: a predicted weekly dose with a 90% conformal interval.
+3. Explainability: SHAP feature attributions and a retrieval-based explanation (MedGemma-27b-it, grounded in SHAP output and PharmGKB and CPIC guidelines).
+
+It also has:
+
+- A clinical-only fallback when the genotype fields are blank.
+- A calibration notice and portability flag for each ancestry subgroup.
+- A stub FHIR R4 `MedicationRequest` export.
+
+Built with React, Vite, Tailwind CSS and React Router. The optional backend uses Django and Django REST Framework.
+
+## Project layout
+
+| Path | Contents |
+| :--- | :--- |
+| `frontend/src/screens/` | The three wizard screens |
+| `frontend/src/components/` | Cards, form fields, the SHAP chart and navigation |
+| `frontend/src/context/` | Wizard state: `WizardProvider.jsx`, `useWizard.js`, `wizardContext.js` |
+| `frontend/src/layout/` | App shell, step indicator and the guard for direct links to later steps |
+| `frontend/src/api/` | Client that calls the backend, or returns mock data when none is set |
+| `frontend/src/mocks/` | Fixed example data |
+| `backend/dosing/` | API views, serializers and mock data |
+| `backend/warfarisk_backend/` | Django project settings and URLs |
 
 ## Getting started
 
 ### Frontend
 
-```
+```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-Runs at `http://localhost:5173/`. No backend required.
+The app runs at `http://localhost:5173/`. It needs no backend.
 
-### Backend
+### Backend (optional)
 
-```
+```bash
 cd backend
 python3 -m venv .venv
 source .venv/bin/activate
@@ -41,7 +70,7 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-To use it from the frontend, set this in `frontend/.env`:
+To make the frontend use the backend, set this in `frontend/.env`:
 
 ```
 VITE_API_BASE_URL=http://localhost:8000
@@ -50,13 +79,15 @@ VITE_API_BASE_URL=http://localhost:8000
 ## API
 
 | Endpoint | Method | Response |
-|---|---|---|
+| :--- | :--- | :--- |
 | `/api/health/` | GET | `{ status: "ok" }` |
-| `/api/predict/` | POST | dose, interval, metrics, calibration, portability |
-| `/api/explain/` | POST | SHAP attributions, pharmacogenomic summary, evidence links, RAG explanation |
-| `/api/fhir/medication-request/` | POST | stub FHIR R4 `MedicationRequest` |
+| `/api/predict/` | POST | Dose, interval, metrics, calibration and portability |
+| `/api/explain/` | POST | SHAP attributions, pharmacogenomic summary, evidence links and the generated explanation |
+| `/api/fhir/medication-request/` | POST | Stub FHIR R4 `MedicationRequest` |
 
 ## Citation
+
+This interface is described in the following paper.
 
 ```bibtex
 @article{barmandah2026warfarisk,
@@ -74,7 +105,7 @@ VITE_API_BASE_URL=http://localhost:8000
 }
 ```
 
-The pipeline and trained models behind this interface are described in:
+The pipeline and trained models behind it are described in this one.
 
 ```bibtex
 @article{jpm16100531,
@@ -89,7 +120,7 @@ The pipeline and trained models behind this interface are described in:
 }
 ```
 
-A machine-readable version is in [`CITATION.cff`](CITATION.cff). Pipeline code: <https://github.com/HasanBGit/WarfaRisk>.
+A machine-readable version is in [`CITATION.cff`](CITATION.cff).
 
 ## License
 
