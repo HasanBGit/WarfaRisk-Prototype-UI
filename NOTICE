@@ -1,0 +1,8 @@
+WarfaRisk Prototype Interface
+Copyright 2026 WarfaRisk contributors
+
+This repository is released under the Apache License 2.0 (see LICENSE).
+
+It shows fixed example data and does not include any patient-level data or trained model.
+The pipeline and trained models it is based on are in https://github.com/HasanBGit/WarfaRisk.
+Third-party libraries keep their own licenses (see frontend/package.json and backend/requirements.txt).
